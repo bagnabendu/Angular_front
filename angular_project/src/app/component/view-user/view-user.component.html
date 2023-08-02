@@ -1,0 +1,30 @@
+
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+            <tr class="table-primary">
+                <th class="table-secondary">Id</th>             
+                <th class="table-info">username</th>             
+                <th class="table-danger">email</th>             
+                <th class="table-warning">Image</th> 
+                <th class="table-warning">password</th> 
+                <th colspan="2" class="table-primary">Action</th>             
+
+            </tr>
+        </thead>
+        <ng-container *ngFor="let i of allitem">
+        <tbody>
+            <tr>
+                <td class="table-primary">**{{i._id.toString().slice(20,24)}}</td>
+                <td class="table-danger">{{i.username}}</td>
+                <td class="table-warning">{{i.email}}</td>
+                <td class="table-info">{{i.image}}</td>
+                <td class="table-info">{{i.password}}</td>
+                <td class="table-danger"><button (click)="deletee(i._id)">Delete</button></td>
+                <td class="table-danger"><a routerLink="/edit/{{i._id}}"> <button>Update</button></a></td>
+
+            </tr>
+        </tbody>
+        </ng-container>
+    </table>
+    </div>
